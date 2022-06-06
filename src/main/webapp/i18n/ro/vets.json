@@ -1,0 +1,26 @@
+{
+  "ingTestProiectApp": {
+    "vets": {
+      "home": {
+        "title": "Vets",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Vets",
+        "createOrEditLabel": "Creeare sau editare Vets",
+        "notFound": "No Vets found"
+      },
+      "created": "A fost creată o nouă entitate Vets cu identificatorul {{ param }}",
+      "updated": "Vets cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Vets cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Vets {{ id }}?"
+      },
+      "detail": {
+        "title": "Vets"
+      },
+      "id": "ID",
+      "firstname": "Firstname",
+      "lastname": "Lastname",
+      "specialty": "Specialty"
+    }
+  }
+}

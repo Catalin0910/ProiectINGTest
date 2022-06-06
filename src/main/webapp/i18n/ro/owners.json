@@ -1,0 +1,29 @@
+{
+  "ingTestProiectApp": {
+    "owners": {
+      "home": {
+        "title": "Owners",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Owners",
+        "createOrEditLabel": "Creeare sau editare Owners",
+        "notFound": "No Owners found"
+      },
+      "created": "A fost creată o nouă entitate Owners cu identificatorul {{ param }}",
+      "updated": "Owners cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Owners cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Owners {{ id }}?"
+      },
+      "detail": {
+        "title": "Owners"
+      },
+      "id": "ID",
+      "firstname": "Firstname",
+      "lastname": "Lastname",
+      "address": "Address",
+      "city": "City",
+      "telephone": "Telephone",
+      "pets": "Pets"
+    }
+  }
+}

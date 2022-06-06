@@ -1,0 +1,39 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="specialties">
+      <h2 data-cy="specialtiesDetailsHeading"><span jhiTranslate="ingTestProiectApp.specialties.detail.title">Specialties</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ specialties.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ingTestProiectApp.specialties.name">Name</span></dt>
+        <dd>
+          <span>{{ specialties.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="ingTestProiectApp.specialties.vet">Vet</span></dt>
+        <dd>
+          <span *ngFor="let vet of specialties.vets; let last = last">
+            <a [routerLink]="['/vets', vet?.id, 'view']">{{ vet.id }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/specialties', specialties.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

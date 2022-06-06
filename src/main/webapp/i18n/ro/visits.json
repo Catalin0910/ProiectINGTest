@@ -1,0 +1,26 @@
+{
+  "ingTestProiectApp": {
+    "visits": {
+      "home": {
+        "title": "Visits",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Visits",
+        "createOrEditLabel": "Creeare sau editare Visits",
+        "notFound": "No Visits found"
+      },
+      "created": "A fost creată o nouă entitate Visits cu identificatorul {{ param }}",
+      "updated": "Visits cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Visits cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Visits {{ id }}?"
+      },
+      "detail": {
+        "title": "Visits"
+      },
+      "id": "ID",
+      "visitdate": "Visitdate",
+      "description": "Description",
+      "pet": "Pet"
+    }
+  }
+}

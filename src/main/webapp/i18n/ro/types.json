@@ -1,0 +1,24 @@
+{
+  "ingTestProiectApp": {
+    "types": {
+      "home": {
+        "title": "Types",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Types",
+        "createOrEditLabel": "Creeare sau editare Types",
+        "notFound": "No Types found"
+      },
+      "created": "A fost creată o nouă entitate Types cu identificatorul {{ param }}",
+      "updated": "Types cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Types cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Types {{ id }}?"
+      },
+      "detail": {
+        "title": "Types"
+      },
+      "id": "ID",
+      "name": "Name"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "applications": "*",
+  "changelogDate": "20220606101605",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "pets",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "32"
+    },
+    {
+      "fieldName": "birthdate",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Pets",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "visits",
+      "otherEntityRelationshipName": "pet",
+      "relationshipName": "visits",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "types",
+      "otherEntityRelationshipName": "pets",
+      "relationshipName": "type",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "owners",
+      "otherEntityRelationshipName": "pets",
+      "relationshipName": "owner",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

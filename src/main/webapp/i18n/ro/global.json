@@ -10,6 +10,12 @@
         "bankAccount": "ContBancar",
         "label": "Etichetă",
         "operation": "Operație",
+        "vets": "Vets",
+        "specialties": "Specialties",
+        "types": "Types",
+        "owners": "Owners",
+        "pets": "Pets",
+        "visits": "Visits",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

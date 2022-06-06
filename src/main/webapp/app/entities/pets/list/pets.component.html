@@ -1,0 +1,88 @@
+<div>
+  <h2 id="page-heading" data-cy="PetsHeading">
+    <span jhiTranslate="ingTestProiectApp.pets.home.title">Pets</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="reset()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="ingTestProiectApp.pets.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-pets"
+        [routerLink]="['/pets/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="ingTestProiectApp.pets.home.createLabel"> Create a new Pets </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="pets?.length === 0">
+    <span jhiTranslate="ingTestProiectApp.pets.home.notFound">No pets found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="pets && pets.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="reset()">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="name"><span jhiTranslate="ingTestProiectApp.pets.name">Name</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="birthdate">
+            <span jhiTranslate="ingTestProiectApp.pets.birthdate">Birthdate</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="type.id">
+            <span jhiTranslate="ingTestProiectApp.pets.type">Type</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="owner.id">
+            <span jhiTranslate="ingTestProiectApp.pets.owner">Owner</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+        <tr *ngFor="let pets of pets; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/pets', pets.id, 'view']">{{ pets.id }}</a>
+          </td>
+          <td>{{ pets.name }}</td>
+          <td>{{ pets.birthdate }}</td>
+          <td>
+            <div *ngIf="pets.type">
+              <a [routerLink]="['/types', pets.type?.id, 'view']">{{ pets.type?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="pets.owner">
+              <a [routerLink]="['/owners', pets.owner?.id, 'view']">{{ pets.owner?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/pets', pets.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button type="submit" [routerLink]="['/pets', pets.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(pets)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="pets">
+      <h2 data-cy="petsDetailsHeading"><span jhiTranslate="ingTestProiectApp.pets.detail.title">Pets</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ pets.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ingTestProiectApp.pets.name">Name</span></dt>
+        <dd>
+          <span>{{ pets.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="ingTestProiectApp.pets.birthdate">Birthdate</span></dt>
+        <dd>
+          <span>{{ pets.birthdate }}</span>
+        </dd>
+        <dt><span jhiTranslate="ingTestProiectApp.pets.type">Type</span></dt>
+        <dd>
+          <div *ngIf="pets.type">
+            <a [routerLink]="['/types', pets.type?.id, 'view']">{{ pets.type?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="ingTestProiectApp.pets.owner">Owner</span></dt>
+        <dd>
+          <div *ngIf="pets.owner">
+            <a [routerLink]="['/owners', pets.owner?.id, 'view']">{{ pets.owner?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/pets', pets.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+{
+  "ingTestProiectApp": {
+    "specialties": {
+      "home": {
+        "title": "Specialties",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Specialties",
+        "createOrEditLabel": "Creeare sau editare Specialties",
+        "notFound": "No Specialties found"
+      },
+      "created": "A fost creată o nouă entitate Specialties cu identificatorul {{ param }}",
+      "updated": "Specialties cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Specialties cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Specialties {{ id }}?"
+      },
+      "detail": {
+        "title": "Specialties"
+      },
+      "id": "ID",
+      "name": "Name",
+      "vet": "Vet"
+    }
+  }
+}

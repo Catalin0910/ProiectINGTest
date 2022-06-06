@@ -1,0 +1,28 @@
+{
+  "ingTestProiectApp": {
+    "pets": {
+      "home": {
+        "title": "Pets",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Creeare o nouă entitate Pets",
+        "createOrEditLabel": "Creeare sau editare Pets",
+        "notFound": "No Pets found"
+      },
+      "created": "A fost creată o nouă entitate Pets cu identificatorul {{ param }}",
+      "updated": "Pets cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Pets cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Pets {{ id }}?"
+      },
+      "detail": {
+        "title": "Pets"
+      },
+      "id": "ID",
+      "name": "Name",
+      "birthdate": "Birthdate",
+      "visits": "Visits",
+      "type": "Type",
+      "owner": "Owner"
+    }
+  }
+}

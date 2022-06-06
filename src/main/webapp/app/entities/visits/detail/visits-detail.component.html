@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="visits">
+      <h2 data-cy="visitsDetailsHeading"><span jhiTranslate="ingTestProiectApp.visits.detail.title">Visits</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ visits.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ingTestProiectApp.visits.visitdate">Visitdate</span></dt>
+        <dd>
+          <span>{{ visits.visitdate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ingTestProiectApp.visits.description">Description</span></dt>
+        <dd>
+          <span>{{ visits.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="ingTestProiectApp.visits.pet">Pet</span></dt>
+        <dd>
+          <div *ngIf="visits.pet">
+            <a [routerLink]="['/pets', visits.pet?.id, 'view']">{{ visits.pet?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/visits', visits.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
